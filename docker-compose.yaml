@@ -4,10 +4,9 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    image: docker-ubuntu-postfix-example-image:latest
-    container_name: docker-ubuntu-postfix-example-container
+    image: mail-server-playground:latest
+    container_name: postfix
     volumes:
-      # Postfixの設定をマウントする
       - type: bind
         source: ./config/main.cf
         target: /etc/postfix/main.cf
